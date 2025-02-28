@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Light mode styles */
+.light-mode {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+/* Main layout */
+main {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Left section */
+.left {
+  flex-basis: 50%;
+  border-radius: 1rem;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Light & Dark mode styles for left panel */
+.light-mode .left {
+  background: #ffffff;
+}
+
+.dark-mode .left {
+  background: #2a2a2a;
+}
+
+/* Code editor styling */
+.code {
+  padding: 1rem;
+  border-radius: 0.7rem;
+  flex-grow: 1;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+/* Light & Dark mode styles for code editor */
+.light-mode .code {
+  background-color: #f8f8f8;
+}
+
+.dark-mode .code {
+  background-color: #0c0c0c;
+}
+
+/* Review button */
+.review {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: rgb(219, 219, 255);
+  color: #000;
+  padding: 0.7rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 1rem;
+  user-select: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.review:hover {
+  transform: scale(1.1);
+  background-color: rgb(168, 168, 255);
+}
+
+/* Right section */
+.right {
+  flex-basis: 50%;
+  border-radius: 1rem;
+  padding: 2rem;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+
+.light-mode .right {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.dark-mode .right {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .left,
+  .right {
+    flex-basis: 100%;
+  }
+
+  .theme-toggle {
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
